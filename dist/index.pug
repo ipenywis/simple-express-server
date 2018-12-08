@@ -1,0 +1,11 @@
+mixin frameworksList(list)
+  ul 
+    each item in list 
+      li= item
+
+html
+  include head.pug
+
+  body 
+    +frameworksList(["React", "Django", "Angular"])
+
