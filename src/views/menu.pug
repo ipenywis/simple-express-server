@@ -1,10 +1,5 @@
 html
-  head
-    title Menu of The Day
-
   body 
-    h3 Meals Menu 
     ul
-      each meal in mealsMenu
-        li Meal: #{meal.name} Type: #{meal.type} Price: #{meal.price}
-        
+      each meal in meals
+        li #{meal.name} price: #{meal.price}

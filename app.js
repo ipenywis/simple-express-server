@@ -8,7 +8,7 @@ const path = require("path");
 
 const bodyParser = require("body-parser");
 
-const boostrap = require("./src/bootstrap");
+const bootstrap = require("./src/boostrap");
 
 //Use a Custom Templating Engine
 app.set("view engine", "pug");
@@ -25,7 +25,12 @@ app.use(router);
 const rootPath = path.resolve("./dist");
 app.use(express.static(rootPath));
 
-boostrap(app, router);
+bootstrap(app, router);
+
+//Main Page (Home)
+router.get("/", (req, res, next) => {
+  return res.send("Hello There");
+});
 
 router.use((err, req, res, next) => {
   if (err) {
